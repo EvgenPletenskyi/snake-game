@@ -29,4 +29,8 @@ Make sure you have the following installed on your machine:
    
 3. Install the necessary dependencies:
    ```bash
+    npm install
+
+4. Run:
+   ```bash
     npm run dev
