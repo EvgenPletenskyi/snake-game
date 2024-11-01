@@ -21,11 +21,11 @@ Make sure you have the following installed on your machine:
 1. Clone the repository to your local machine:
 
    ```bash
-   git clone https://github.com/yourusername/your-repo-name.git
+   git clone https://github.com/EvgenPletenskyi/snake-game.git
    
 2. Navigate into the project directory:
-
-   cd your-repo-name
+    ```bash
+   cd your-directory-name
    
 3. Install the necessary dependencies:
    ```bash
