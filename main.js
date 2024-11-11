@@ -1,13 +1,9 @@
-import { Application } from 'pixi.js';
-import Game from './src/classes/Game.js';
-
 (async () => {
-  const app = new Application();
+  const app = new PIXI.Application();
   await app.init({ width: 740, height: 440, backgroundColor: 0x575757 });
   // globalThis.__PIXI_APP__ = app;
 
   document.getElementById('game-container').appendChild(app.canvas);
-  console.log('build');
 
   const game = new Game(app);
 

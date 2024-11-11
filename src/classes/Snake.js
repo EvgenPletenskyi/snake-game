@@ -1,4 +1,4 @@
-export default class Snake {
+class Snake {
   constructor() {
     this.segments = [
       { x: 2, y: 10 },
@@ -90,3 +90,5 @@ export default class Snake {
     return false;
   }
 }
+
+window.Snake = Snake;

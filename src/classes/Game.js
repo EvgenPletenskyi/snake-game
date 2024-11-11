@@ -1,17 +1,11 @@
-import { Graphics, Container } from 'pixi.js';
-import Snake from './Snake.js';
-import Food from './Food.js';
-import Wall from './Wall.js';
-import Menu from './Menu.js';
-
 class Game {
   constructor(app, gridSize = 22, cellSize = 20) {
     this.app = app;
     this.gridSize = gridSize;
     this.cellSize = cellSize;
 
-    this.menuContainer = new Container();
-    this.gameContainer = new Container();
+    this.menuContainer = new PIXI.Container();
+    this.gameContainer = new PIXI.Container();
 
     this.wall = new Wall(this.cellSize);
     this.menu = new Menu();
@@ -194,7 +188,7 @@ class Game {
   }
 
   drawCell(x, y, color) {
-    const cell = new Graphics();
+    const cell = new PIXI.Graphics();
     cell.rect(0, 0, this.cellSize, this.cellSize).fill(color);
     cell.x = x * this.cellSize;
     cell.y = y * this.cellSize;
@@ -243,4 +237,4 @@ class Game {
   }
 }
 
-export default Game;
+window.Game = Game;

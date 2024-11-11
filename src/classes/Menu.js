@@ -1,9 +1,6 @@
-import { Container, Graphics, Text } from 'pixi.js';
-import { ButtonContainer, CheckBox } from '@pixi/ui';
-
 class Menu {
   constructor() {
-    this.container = new Container();
+    this.container = new PIXI.Container();
     this._bestScore = localStorage.getItem('bestScore') || 0;
     this._currentScore = 0;
     this.container.x = 440;
@@ -18,13 +15,13 @@ class Menu {
   }
 
   createBackground(width, height) {
-    const background = new Graphics();
+    const background = new PIXI.Graphics();
     background.rect(0, 0, width, height).fill(0x077482);
     this.container.addChild(background);
   }
 
   createTitle() {
-    const title = new Text({
+    const title = new PIXI.Text({
       text: 'Snake Game',
       style: {
         fontFamily: 'Arial',
@@ -39,7 +36,7 @@ class Menu {
   }
 
   createText(text, x, y, fontSize = 22, color = 0xffffff) {
-    const textObj = new Text({
+    const textObj = new PIXI.Text({
       text: text,
       style: {
         fontSize: fontSize,
@@ -66,20 +63,20 @@ class Menu {
     const width = 25,
       height = 25,
       radius = 5;
-    this.checkBoxContainer = new Container();
+    this.checkBoxContainer = new PIXI.Container();
 
     modes.forEach((modeName, index) => {
-      const checkbox = new CheckBox({
+      const checkbox = new PIXI.ui.CheckBox({
         checked: false,
         text: `${modeName}`,
         style: {
-          unchecked: new Graphics()
+          unchecked: new PIXI.Graphics()
             .fill(0xdcb000)
             .roundRect(-2, -2, width + 4, height + 4, radius)
             .fill(0xf1d583)
             .roundRect(0, 0, width, height, radius),
 
-          checked: new Graphics()
+          checked: new PIXI.Graphics()
             .fill(0xdcb000)
             .roundRect(-2, -2, width + 4, height + 4, radius)
             .fill(0xf1d583)
@@ -124,11 +121,11 @@ class Menu {
     }
   }
   createButton(label, x, y, onClick) {
-    const buttonGraphics = new Graphics()
+    const buttonGraphics = new PIXI.Graphics()
       .rect(0, 0, 100, 50, 15)
       .fill(0x245450);
 
-    const buttonText = new Text({
+    const buttonText = new PIXI.Text({
       text: label,
       style: {
         fontFamily: 'Arial',
@@ -143,7 +140,7 @@ class Menu {
       buttonGraphics.height / 2
     );
 
-    const buttonContainer = new ButtonContainer(buttonGraphics);
+    const buttonContainer = new PIXI.ui.ButtonContainer(buttonGraphics);
     buttonContainer.addChild(buttonText);
     buttonContainer.position.set(x, y);
     buttonContainer.interactive = true;
@@ -222,4 +219,4 @@ class Menu {
   }
 }
 
-export default Menu;
+window.Menu = Menu;

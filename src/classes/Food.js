@@ -41,4 +41,4 @@ class Food {
   }
 }
 
-export default Food;
+window.Food = Food;
